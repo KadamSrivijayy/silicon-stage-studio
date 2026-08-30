@@ -1,5 +1,6 @@
-import { ExternalLink, Github, ImageIcon, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Github, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { ScreenshotGallery } from "@/components/ScreenshotGallery";
 import type { projects } from "@/data/profile";
 
 type Project = (typeof projects)[number];
@@ -15,9 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Reveal>
       <article className="glass card-hover overflow-hidden rounded-3xl">
-        {/* ==============================================================
-            PROJECT SCREENSHOT — replace /public/projects/foodshareai.png
-           ============================================================== */}
+        {/* PROJECT SCREENSHOT */}
         <div className="relative aspect-16/9 w-full overflow-hidden border-b border-border/70 bg-secondary/40">
           <img
             src={project.image}
@@ -25,9 +24,6 @@ export function ProjectCard({ project }: { project: Project }) {
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
           />
-          <span className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[10px] tracking-wider text-muted-foreground uppercase backdrop-blur">
-            <ImageIcon className="h-3 w-3" /> replace /public/projects/foodshareai.png
-          </span>
         </div>
 
         <div className="grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.4fr_0.6fr]">
@@ -76,6 +72,11 @@ export function ProjectCard({ project }: { project: Project }) {
                 Add the real URLs in <span className="text-primary">src/data/profile.ts</span>{" "}
                 (liveUrl / sourceUrl).
               </p>
+            )}
+
+            {/* Screenshot Gallery */}
+            {"gallery" in project && project.gallery && project.gallery.length > 0 && (
+              <ScreenshotGallery images={project.gallery} projectName={project.name} />
             )}
           </div>
 

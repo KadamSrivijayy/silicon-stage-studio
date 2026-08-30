@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { PageShell, Section } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
+import { PDFViewer } from "@/components/PDFViewer";
 import { profile, projects, skillGroups, timeline } from "@/data/profile";
 
 export const Route = createFileRoute("/cv")({
@@ -56,24 +57,19 @@ function CV() {
     <PageShell>
       <Section>
         <Reveal>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h1 className="text-4xl font-bold sm:text-5xl">My CV</h1>
-              <p className="mt-3 text-muted-foreground">
-                A living resume — I keep it updated as I learn.
-              </p>
-            </div>
-            <a
-              href={profile.cv}
-              download
-              className="inline-flex items-center gap-2 self-start rounded-full accent-gradient px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              <Download className="h-4 w-4" /> Download CV
-            </a>
+          <div>
+            <h1 className="text-4xl font-bold sm:text-5xl">My CV</h1>
+            <p className="mt-3 text-muted-foreground">
+              View my resume below or download a copy.
+            </p>
           </div>
         </Reveal>
 
-        <Reveal delay={120} className="mt-10">
+        {/* PDF Viewer Section */}
+        <PDFViewer pdfUrl={profile.cv} title="My CV" />
+
+        {/* Detailed CV Content */}
+        <Reveal delay={120} className="mt-16">
           <article className="glass rounded-3xl p-7 sm:p-10">
             <header className="flex flex-col gap-4 pb-7 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -158,13 +154,6 @@ function CV() {
               <Placeholder>[ EDIT ME ] Add certifications, courses or awards when you have them.</Placeholder>
             </Block>
           </article>
-        </Reveal>
-
-        <Reveal delay={200} className="mt-6">
-          <p className="text-center font-mono text-xs text-muted-foreground">
-            Replace the PDF at <span className="text-primary">/public/Srivijay-Kadam-CV.pdf</span>{" "}
-            to update the download button.
-          </p>
         </Reveal>
       </Section>
     </PageShell>
