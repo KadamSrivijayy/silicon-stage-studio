@@ -46,7 +46,7 @@ export function PDFViewer({ pdfUrl, title = "CV" }: PDFViewerProps) {
                   </div>
                   <div>
                     <h3 className="font-semibold">CV Document</h3>
-                    <p className="text-xs text-muted-foreground">Srivijay-Kadam-CV.pdf</p>
+                    <p className="text-xs text-muted-foreground">srivijay-kadam-cv.pdf</p>
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export function PDFViewer({ pdfUrl, title = "CV" }: PDFViewerProps) {
 
               <div className="rounded-lg border border-dashed border-border bg-secondary/40 p-4">
                 <p className="font-mono text-xs text-muted-foreground">
-                  Add your PDF to: <span className="text-primary">/public/Srivijay-Kadam-CV.pdf</span>
+                  Add your PDF to: <span className="text-primary">/public/srivijay-kadam-cv.pdf</span>
                 </p>
               </div>
 
