@@ -3,7 +3,7 @@ import { PageShell, Section } from "@/components/PageShell";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Timeline } from "@/components/Timeline";
-import { drives, profile } from "@/data/profile";
+import { drives, profile, education, interests } from "@/data/profile";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -49,7 +49,52 @@ function About() {
             of logical thinking that good software depends on. I'm not an experienced engineer yet
             — I'm a learner who shows up consistently.
           </p>
+          <p>
+            My goal is to continuously improve my technical skills, deepen my understanding of problem-solving,
+            and build practical projects that solve real problems. I believe in the power of consistent practice
+            and learning by doing.
+          </p>
         </Reveal>
+      </Section>
+
+      <Section className="pt-0">
+        <SectionHeading eyebrow="Education" title="Schooling" />
+        <div className="mt-10 space-y-4">
+          {education.map((edu, i) => (
+            <Reveal key={edu.level} delay={i * 80}>
+              <div className="glass card-hover rounded-2xl p-6">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 className="font-display text-lg font-semibold">{edu.level}</h3>
+                      <p className="text-sm font-medium text-muted-foreground">{edu.school}</p>
+                    </div>
+                    <span className="inline-block rounded-full border border-primary/60 bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">
+                      {edu.percentage}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:gap-4">
+                    <span>📍 {edu.location}</span>
+                    <span>📅 {edu.duration}</span>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="pt-0">
+        <SectionHeading eyebrow="Beyond Coding" title="My Interests" />
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {interests.map((interest, i) => (
+            <Reveal key={interest} delay={i * 60}>
+              <div className="glass card-hover flex items-center rounded-2xl p-4">
+                <span className="text-sm font-medium">{interest}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       <Section className="pt-0">

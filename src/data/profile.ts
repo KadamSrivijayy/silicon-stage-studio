@@ -17,8 +17,8 @@ export const profile = {
   // Profile photo from: /public/profile.jpeg
   photo: "/profile.jpeg",
 
-  // CV from: /public/Srivijay-Kadam-CV.pdf
-  cv: "/Srivijay-Kadam-CV.pdf",
+  // CV from: /public/srivijay-kadam-cv.pdf
+  cv: "/srivijay-kadam-cv.pdf",
 
   // Replace with your real profile URLs
   github: "YOUR_GITHUB_URL",
@@ -59,6 +59,32 @@ export const drives = [
   { title: "Turning Ideas Into Software", body: "The goal: take an idea and ship it as something people can use." },
 ];
 
+export const education = [
+  {
+    level: "Class 12",
+    school: "Narayana Junior College",
+    location: "Hyderabad",
+    percentage: "89%",
+    duration: "Aug 2023 – Mar 2025",
+  },
+  {
+    level: "Class 10",
+    school: "Sri Nagabhushana Vidyalayam",
+    location: "Basar",
+    percentage: "92%",
+    duration: "Jun 2022 – Mar 2023",
+  },
+];
+
+export type Education = typeof education[number];
+
+export const interests = [
+  "Reading books",
+  "Listening to music",
+  "Watching movies",
+  "Playing video games",
+];
+
 export type SkillLevel = "Current Focus" | "Practicing" | "Learning" | "Familiar" | "Future";
 
 export const skillGroups: {
@@ -71,39 +97,36 @@ export const skillGroups: {
     icon: "code",
     skills: [
       { name: "C++", level: "Current Focus" },
+      { name: "C", level: "Practicing" },
       { name: "Python", level: "Familiar" },
+      { name: "JavaScript", level: "Learning" },
     ],
   },
   {
-    category: "Currently Learning",
-    icon: "brain",
-    skills: [
-      { name: "C++", level: "Current Focus" },
-      { name: "DSA", level: "Learning" },
-    ],
-  },
-  {
-    category: "Core Programming",
+    category: "Web Technologies",
     icon: "layers",
     skills: [
-      { name: "Conditional Statements", level: "Practicing" },
-      { name: "Loops", level: "Practicing" },
-      { name: "Functions", level: "Practicing" },
-      { name: "Arrays", level: "Practicing" },
-      { name: "Pointers", level: "Learning" },
-      { name: "Searching", level: "Practicing" },
-      { name: "Sorting", level: "Practicing" },
-      { name: "Problem Solving", level: "Practicing" },
-      { name: "Basic DSA", level: "Learning" },
+      { name: "HTML", level: "Practicing" },
+      { name: "CSS", level: "Practicing" },
     ],
   },
   {
-    category: "Future Learning",
+    category: "Databases & Data",
+    icon: "brain",
+    skills: [
+      { name: "PostgreSQL", level: "Learning" },
+      { name: "MongoDB", level: "Learning" },
+      { name: "DBMS Fundamentals", level: "Learning" },
+    ],
+  },
+  {
+    category: "Problem Solving & DSA",
     icon: "rocket",
     skills: [
-      { name: "Java", level: "Future" },
-      { name: "Advanced DSA", level: "Future" },
-      { name: "Software Development", level: "Future" },
+      { name: "Data Structures", level: "Learning" },
+      { name: "Algorithms", level: "Learning" },
+      { name: "Problem Solving", level: "Practicing" },
+      { name: "Time & Space Complexity", level: "Learning" },
     ],
   },
 ];
@@ -196,6 +219,25 @@ export const projects = [
       "Modern, responsive web interface",
       "Food sharing and accessibility features",
       "Built as a real-world learning project",
+    ],
+  },
+  {
+    name: "Emotion-Based Smart Lighting System",
+    tagline: "Responsive lighting controlled by emotional states",
+    description:
+      "An emotion-aware smart lighting concept that uses detected emotional states to dynamically adjust lighting conditions, creating a more personalized and responsive environment. This project explores the intersection of human-centered technology and smart home automation.",
+    // Project image
+    image: "/projects/foodshareai.png",
+    // No gallery for this project yet
+    gallery: [],
+    liveUrl: "#",
+    sourceUrl: "#",
+    tech: ["Emotion Detection", "Smart Lighting", "IoT Concept"],
+    highlights: [
+      "Emotion state detection and analysis",
+      "Dynamic lighting adjustment algorithms",
+      "Human-centered design approach",
+      "Automated environmental response",
     ],
   },
 ];

@@ -12,10 +12,10 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "FoodShareAI — a web-based project by Srivijay Kadam combining a modern web interface with AI-oriented food-sharing functionality.",
+          "Projects by Srivijay Kadam: FoodShareAI — a web-based food-sharing platform, and Emotion-Based Smart Lighting System.",
       },
       { property: "og:title", content: "Projects | Srivijay Kadam" },
-      { property: "og:description", content: "FoodShareAI, my featured student project." },
+      { property: "og:description", content: "My projects: FoodShareAI and Emotion-Based Smart Lighting System." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/projects" },
     ],
@@ -31,7 +31,7 @@ function Projects() {
         <SectionHeading
           eyebrow="Work"
           title="Projects"
-          subtitle="One project, built properly. I'd rather show something real than pad this page."
+          subtitle="Building practical projects that solve real problems or explore interesting concepts."
         />
         <div className="mt-10 space-y-8">
           {projects.map((p) => (
